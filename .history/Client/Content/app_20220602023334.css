@@ -1,0 +1,39 @@
+.bio {
+    margin-top: 45px;
+}
+
+.about-body {
+    min-height: 100vh;
+}
+.thumbnail {
+    transition: .4s;
+
+}
+.thumbnail:hover {
+     -webkit-box-shadow: 7px 10px 16px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 10px 16px 1px rgba(0,0,0,0.75);
+    box-shadow: 7px 10px 16px 1px rgba(0,0,0,0.75);
+}
+
+.service-header {
+    font-size: 24px;
+}
+
+.services {
+    min-height: 120vh;
+}
+
+.contact {
+    min-height: 100vh;
+}
+
+.contact-background {
+    overflow:hidden; 
+    background: rgba(0, 0, 0, 0.5) url('/Assets/Images/cntower.jpg');
+    width: 100%;
+    height: 76vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+}
