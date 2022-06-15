@@ -14,18 +14,6 @@ const app = express();
 
 // DB configuration
 import * as DBConfig from './db';
-mongoose.connect(DBConfig.LocalURI);
-
-const db = mongoose.connection;
-db.on("open", function()
-{
-  console.log(`Connected to MongoDB at: ${DBConfig.HostName}`);
-});
-
-db.on("error", function()
-{
-  console.error(`Connection Error`);
-});
 
 // view engine setup
 app.set('views', path.join(__dirname, '../Views'));
