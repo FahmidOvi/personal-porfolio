@@ -1,5 +1,5 @@
 import express from 'express';
-import User from '../Models/user';
+import user from '../Models/user';
 import passport from 'passport';
 
 // Display Functions
@@ -42,36 +42,13 @@ export function ProcessLoginPage(req : express.Request, res : express.Response, 
 export function ProcessRegisterPage(req : express.Request, res : express.Response, next : express.NextFunction) 
 {
     // instantiate a new user object
-    let newUser = new User
+    let newUser = new user
     ({
-        username: req.body.username,
-        EmailAddress: req.body.EmailAddress,
-        DisplayName: req.body.firstName + " " + req.body.lastName
-    });
+        username: req.body.username
 
-    User.register(newUser, req.body.password, function(err){
-        if (err) 
-        {
-            if (err.name == "userExistsError"){
-                console.error('ERROR: User already exists!');
-                req.flash('registerMessage', 'Registration Error!');
-            }
-            else
-            {
-                console.error(err.name);
-                req.flash('registerMessage', 'Server-Error');
-            }
-            res.redirect('/register');
-        }
-        return passport.authenticate('local')(req, res, function()
-        {
-            return res.redirect('/movie-list');
-        });
-    });
+    })
 }
 
 export function ProcessLogoutPage(req : express.Request, res : express.Response, next : express.NextFunction) 
 {
-    req.logOut();
-    res.redirect('/login');
 };

@@ -72,6 +72,4 @@ export function ProcessRegisterPage(req : express.Request, res : express.Respons
 
 export function ProcessLogoutPage(req : express.Request, res : express.Response, next : express.NextFunction) 
 {
-    req.logOut();
-    res.redirect('/login');
 };
