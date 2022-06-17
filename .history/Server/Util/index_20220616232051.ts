@@ -10,7 +10,7 @@ export function userDisplayName(req: express.Request): string
     return '';
 }
 
-export function AuthGuard(req: express.Request, res: express.Response, next: express.NextFunction): void
+export function AuthGuard(req: express.Request, res: express.Response, next: express.NextFunction)
 {
     if (!req.isAuthenticated())
     {
