@@ -102,8 +102,5 @@ export function ProcessDeletePage(req : express.Request, res : express.Response,
             console.error(err);
             res.end(err);
         };
-
-        //delete was successful
-        res.redirect('/movie-list');
     });
 }
