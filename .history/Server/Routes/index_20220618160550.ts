@@ -1,25 +1,24 @@
 import express from 'express';
 const router = express.Router();
 
-// import the controller module
 import {DisplayHomePage , DisplayAboutPage, DisplayContactPage, DisplayServicesPage, DisplayProjectsPage} from "../Controllers/index";
 
-/* Display home page. */
+/* GET home page. */
 router.get('/', DisplayHomePage);
 
-/* Display home page. */
+/* GET home page. */
 router.get('/home', DisplayHomePage);
 
-/* Display about page. */
+/* GET about page. */
 router.get('/about', DisplayAboutPage);
 
-/* Display projects page. */
+/* GET projects page. */
 router.get('/projects', DisplayProjectsPage);
 
-/* Display services page. */
+/* GET services page. */
 router.get('/services', DisplayServicesPage);
 
-/* Display contact page. */
+/* GET contact page. */
 router.get('/contact', DisplayContactPage);
 
 export default router;

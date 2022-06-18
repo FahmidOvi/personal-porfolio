@@ -60,8 +60,6 @@ export function ProcessLoginPage(req : express.Request, res : express.Response, 
 
 export function ProcessRegisterPage(req : express.Request, res : express.Response, next : express.NextFunction) 
 {
-    // validate user inputs
-
     // instantiate a new user object
     let newUser = new User
     ({

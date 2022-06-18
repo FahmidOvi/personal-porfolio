@@ -60,8 +60,6 @@ export function ProcessLoginPage(req : express.Request, res : express.Response, 
 
 export function ProcessRegisterPage(req : express.Request, res : express.Response, next : express.NextFunction) 
 {
-    // validate user inputs
-
     // instantiate a new user object
     let newUser = new User
     ({
@@ -95,7 +93,6 @@ export function ProcessRegisterPage(req : express.Request, res : express.Respons
 
 export function ProcessLogoutPage(req : express.Request, res : express.Response, next : express.NextFunction) 
 {
-    // logout user
     req.logOut(function(err)
     {
         if (err)

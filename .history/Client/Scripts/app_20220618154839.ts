@@ -11,7 +11,7 @@ Date: 6/3/2022
 {
     function Start()
     {
-        // Confirm delete contact in contact-list page
+        // Confirm delete contact
         $("a.delete").on("click", function(event)
         {
             if (!confirm("Are you sure?"))
@@ -21,7 +21,6 @@ Date: 6/3/2022
             };
         });
 
-        // Confirm delete contact in contact-list page
         $("a.deleteOnEdit").on("click", function(event)
         {
             if (!confirm("Are you sure?"))

@@ -33,21 +33,17 @@ export function ProcessLoginPage(req : express.Request, res : express.Response, 
 {
     passport.authenticate('local', function(err, user, info)
     {
-        // listen to server errors
         if (err)
         {
             console.error(err);
             res.end(err);
         }
-
-        // listen to login errors
         if (!user)
         {
             req.flash('loginMessage', 'Authentication Error!');
             return res.redirect('/login');
         }
 
-        // no problem -> user logged in
         req.logIn(user, function(err){
             if (err){
                 console.error(err);
@@ -60,8 +56,6 @@ export function ProcessLoginPage(req : express.Request, res : express.Response, 
 
 export function ProcessRegisterPage(req : express.Request, res : express.Response, next : express.NextFunction) 
 {
-    // validate user inputs
-
     // instantiate a new user object
     let newUser = new User
     ({
@@ -84,8 +78,6 @@ export function ProcessRegisterPage(req : express.Request, res : express.Respons
             }
             res.redirect('/register');
         }
-        
-        // all ok -> user has been registered
         return passport.authenticate('local')(req, res, function()
         {
             return res.redirect('/contact-list');
@@ -95,7 +87,6 @@ export function ProcessRegisterPage(req : express.Request, res : express.Respons
 
 export function ProcessLogoutPage(req : express.Request, res : express.Response, next : express.NextFunction) 
 {
-    // logout user
     req.logOut(function(err)
     {
         if (err)
