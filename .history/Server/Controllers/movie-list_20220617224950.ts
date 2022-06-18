@@ -49,7 +49,6 @@ export function ProcessAddPage(req : express.Request, res : express.Response, ne
         "Rating" : req.body.movieRating
     });
 
-    // insert the new Movie object into the database (movies collection)
     Movie.create(newMovie, function(err : ErrorCallback)
     {
         if (err)
