@@ -4,7 +4,7 @@ const router = express.Router();
 import {DisplayAddPage, DisplayEditPage, DisplayContactList, ProcessAddPage, ProcessDeletePage, ProcessEditPage} from '../Controllers/contact-list';
 import { AuthGuard } from '../Util/index';
  
-/* GET contact-list page */
+/* GET movie-list page */
 router.get('/contact-list', AuthGuard, DisplayContactList);
 
 /* Display Add page */

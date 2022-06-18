@@ -12,7 +12,7 @@ function DisplayContactList(req, res, next) {
             console.error(err);
             res.end(err);
         }
-        res.render('index', { title: 'Movie List', page: 'contact-list', contacts: contactsCollection, displayName: (0, Util_1.UserDisplayName)(req) });
+        res.render('index', { title: 'Contact List', page: 'contact-list', contacts: contactsCollection, displayName: (0, Util_1.UserDisplayName)(req) });
     });
 }
 exports.DisplayContactList = DisplayContactList;

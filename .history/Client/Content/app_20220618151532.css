@@ -11,17 +11,6 @@ Date: 6/3/2022
     margin-top: 45px;
 }
 
-.about-body {
-    padding-bottom: 60px;
-}
-
-.projects {
-    padding-bottom: 75px;
-}
-
-.contact {
-    padding-bottom: 75px;
-}
 
 .thumbnail {
     transition: .4s;
@@ -38,7 +27,7 @@ Date: 6/3/2022
 }
 
 .services {
-    padding-bottom: 60px;
+    min-height: 120vh;
 }
 
 .contact-background {
