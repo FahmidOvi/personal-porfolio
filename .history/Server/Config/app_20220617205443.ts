@@ -31,12 +31,12 @@ const app = express();
 
 // DB configuration
 import * as DBConfig from './db';
-mongoose.connect(DBConfig.RemoteURI || DBConfig.LocalURI);
+mongoose.connect(DBConfig.RemoteURI);
 
 const db = mongoose.connection;
 db.on("open", function()
 {
-  console.log(`Connected to MongoDB at: ${(DBConfig.RemoteURI) ? DBConfig.HostName : "localhost"}`);
+  console.log(`Connected to MongoDB at: ${DBConfig.HostName}`);
 });
 
 db.on("error", function()

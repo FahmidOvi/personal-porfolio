@@ -36,7 +36,7 @@ mongoose.connect(DBConfig.RemoteURI || DBConfig.LocalURI);
 const db = mongoose.connection;
 db.on("open", function()
 {
-  console.log(`Connected to MongoDB at: ${(DBConfig.RemoteURI) ? DBConfig.HostName : "localhost"}`);
+  console.log(`Connected to MongoDB at: ${(DBConfig.RemoteURI) ? DBConfig.HostName : "Localhost"}`);
 });
 
 db.on("error", function()
