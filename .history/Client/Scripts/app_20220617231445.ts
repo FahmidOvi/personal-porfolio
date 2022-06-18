@@ -15,7 +15,7 @@ Date: 6/3/2022
         {
             if (!confirm("Are you sure?"))
             {
-                event.preventDefault();
+                event.preventDefault;
                 location.href = "/movie-list"; 
             };
         });
