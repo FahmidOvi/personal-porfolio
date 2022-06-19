@@ -4,7 +4,7 @@ exports.validateRegister = exports.registerValidateCheck = void 0;
 const express_validator_1 = require("express-validator");
 const _1 = require(".");
 exports.registerValidateCheck = [
-    (0, express_validator_1.check)('firstName', 'Firstname cannot be blanked')
+    (0, express_validator_1.check)('firstName', 'First name cannot be blanked')
         .notEmpty(),
     (0, express_validator_1.check)('emailAddress', 'Enter a valid email address')
         .exists()
