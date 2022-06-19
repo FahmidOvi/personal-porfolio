@@ -2,7 +2,7 @@ import express from 'express';
 const router = express.Router();
 import bodyParser from 'body-parser';
 import {check, validationResult} from 'express-validator';
-import {registerValidateCheck, validateRegister} from '../Util/validation';
+import {registerValidateCheck} from '../Util/validation';
 
 const urlencodedParser = bodyParser.urlencoded({extended: false});
 
@@ -20,7 +20,17 @@ router.get('/register', DisplayRegisterPage);
 router.post('/login', ProcessLoginPage);
 
 /* Process register page. */
-router.post('/register',  registerValidateCheck, validateRegister, ProcessRegisterPage);
+router.post('/register',  registerValidateCheck, (req: express.Request,res: express.Response, next : express.NextFunction)=> 
+{
+    const errors = validationResult(req);
+    if (!errors.isEmpty())
+    {
+        const err = errors.array();
+        console.log(err);
+        return res.render('index', {title: 'Register', page: 'register', messages: req.flash('registerMessage'), displayName: UserDisplayName(req), err});
+    }
+    next();
+}, ProcessRegisterPage);
 
 /* Process logout page. */
 router.get('/logout', ProcessLogoutPage);
