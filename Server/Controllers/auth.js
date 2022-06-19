@@ -17,7 +17,7 @@ exports.DisplayLoginPage = DisplayLoginPage;
 ;
 function DisplayRegisterPage(req, res, next) {
     if (!req.user) {
-        return res.render('index', { title: 'Register', page: 'register', messages: req.flash('registerMessage'), displayName: (0, Util_1.UserDisplayName)(req) });
+        return res.render('index', { title: 'Register', page: 'register', messages: req.flash('registerMessage'), displayName: (0, Util_1.UserDisplayName)(req), err: '' });
     }
     return res.redirect('/contact-list');
 }
@@ -50,15 +50,15 @@ function ProcessRegisterPage(req, res, next) {
     });
     user_1.default.register(newUser, req.body.password, function (err) {
         if (err) {
-            if (err.name == "userExistsError") {
+            if (err.name == "UserExistsError") {
                 console.error('ERROR: User already exists!');
                 req.flash('registerMessage', 'Registration Error!');
             }
             else {
                 console.error(err.name);
-                req.flash('registerMessage', 'Server-Error');
+                req.flash('registerMessage', "Server-Error!");
             }
-            res.redirect('/register');
+            return res.redirect('/register');
         }
         return passport_1.default.authenticate('local')(req, res, function () {
             return res.redirect('/contact-list');
